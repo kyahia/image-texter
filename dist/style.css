@@ -1,3 +1,8 @@
 canvas{
-	border: 2px solid orange;
+	height: 400px!important;
+	width: 400px!important;
+}
+
+input{
+	font-size: larger;
 }
