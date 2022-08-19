@@ -1,8 +1,27 @@
 canvas{
 	height: 400px!important;
 	width: 400px!important;
+	border: 4px solid black;
 }
 
-input{
+.buttons button, input{
 	font-size: larger;
+}
+
+main{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+form input[type="text"], .controls input{
+	width: 4em;
+}
+
+article{
+	display: flex;
+	flex-direction: column
+}
+
+.buttons{
+	margin-top: auto;
 }

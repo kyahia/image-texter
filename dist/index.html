@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,33 +8,76 @@
     <title>FabricJS</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>
-        <label for="">Font size</label>
-        <input type="number" id="font-size" value="80">
-    </p>
-    <p>
-        <label for="">Positions</label>
-        <input type="number" id="top">
-        <input type="number" id="left">
-    </p>
-    <p>
-        <label for="">Color</label>
-        <input type="color" id="color" value="#ffffff">
-    </p>
-	
-    <canvas id="c" height="400" width="400"></canvas>
-    <p>
-        <label for="">Content</label>
-        <input type="text" id="content" value="10 mm">
-    </p>
-    <button id="apply">Apply</button>
-	<button id="download">Download</button>
 
-    <p>8 10</p>
-    <p>12 14 16</p>
-    <p>20 25</p>
-	
-	<script src='./main.js'></script>
+<body>
+    <main>
+        <aside>
+            <div class="controls">
+                <p>
+                    <label for="">Font size</label>
+                    <input type="number" id="font-size" value="80">
+                    <label for="">Color</label>
+                    <input type="color" id="color" value="#ffffff">
+                </p>
+                <p class="positions">
+                    <label for="">Positions</label>
+                    <input type="number" id="top">
+                    <input type="number" id="left">
+                </p>
+            </div>
+
+            <div class="display">
+                <canvas id="c" height="400" width="400"></canvas>
+                <p>
+                    <label for="">Content</label>
+                    <input type="text" id="content">
+                </p>
+            </div>
+        </aside>
+        <article>
+            <div class="image-input">
+                <input type="file" name="file-input" id="file-input">
+            </div>
+            
+            <ul>
+                <form>
+                    <li>
+                        <input type="radio" id="one" name="values-list" value="HTML" checked>
+                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                    </li>
+                    <li>
+                        <input type="radio" id="two" name="values-list" value="HTML">
+                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                    </li>
+                    <li>
+                        <input type="radio" id="three" name="values-list" value="HTML">
+                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                    </li>
+                    <li>
+                        <input type="radio" id="four" name="values-list" value="HTML">
+                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                    </li>
+                    <li>
+                        <input type="radio" id="five" name="values-list" value="HTML">
+                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                    </li>
+                    <input type="text" id="separator">
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </ul>
+
+            <div class="buttons">
+                <button id="apply">Apply</button>
+                <button id="download">Download</button>
+                <button id="download-all">Download All</button>
+            </div>
+
+        </article>
+    </main>
+
+
+
+    <script src='./main.js'></script>
 </body>
+
 </html>
