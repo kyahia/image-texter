@@ -1,8 +1,10 @@
 const express = require('express');
 const path = require('path');
 
+const port = 8080;
+
 const app = express();
-app.listen(3000, () => console.log('Listening to 3000'));
+app.listen(port, () => console.log('Listening to ', port));
 
 app.get('/', (req, res) => {
    res.sendFile(path.join(__dirname, './index.html'));

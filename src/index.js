@@ -27,7 +27,6 @@ fileInput.addEventListener('change', e => {
    contentIndex = 0;
    const reader = new FileReader();
    reader.onload = () => {
-      filename = e.target.files[0].name;
       const uploadedImg = reader.result;
 
       const imgBlob = new Image;
@@ -58,8 +57,7 @@ function submitForm() {
    let textareaFill;
    if (separatorEl.value == '') textareaFill = checked.parentElement.querySelector('textarea').value.split('\n');
    else textareaFill = checked.parentElement.querySelector('textarea').value.split(separatorEl.value);
-   console.log(textareaFill)
-   contentEl.value = textareaFill[contentIndex].trim();
+   contentEl.value = textareaFill[contentIndex].trim().split('@')[0];
    apply();
 }
 
@@ -81,17 +79,17 @@ function apply() {
 function save(i = '') {
    const myEl = document.createElement('a');
    document.body.appendChild(myEl);
-   myEl.download = filename + i;
+   myEl.download = i + '.png';
    myEl.href = canvas.toDataURL();
    myEl.click();
 }
 
 document.getElementById('download-all').addEventListener('click', () => {
-   const contentList = checked.parentElement.querySelector('label').textContent.split('$');
+   const contentList = checked.parentElement.querySelector('textarea').value.split('\n');
    for (let i = 0; i < contentList.length; i++) {
       setTimeout(() => {
          submitForm();
-         save(contentList[i].trim());
+         save(contentList[i].trim().split('@')[1]);
          contentIndex += 1;
       }, i * 100)
    }
